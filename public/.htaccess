@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+ RewriteEngine On
+ # Если файл в директории не найден, то запрос на index.php
+ RewriteCond %{REQUEST_FILENAME} !-f
+ # QSA - добавление строки запроса из URL к существующей
+ RewriteRule ^ index.php [QSA,L]
+</IfModule>

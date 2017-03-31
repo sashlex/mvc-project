@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  # пустая строка на вход, редиректится на public, и [L] - закончить преобразование здесь
+  RewriteRule    ^$    public/    [L]
+  # любая строка на вход, редиректится на public, $1 - подстановка запроса ( преобразует: page -> public/page )
+  RewriteRule    (.*) public/$1    [L]
+</IfModule>
