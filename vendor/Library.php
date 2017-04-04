@@ -1,8 +1,8 @@
 <?php
 
-# vendors php Framework
+# vendors php Library
 
-class Framework {
+class Library {
 
     public function __construct ( $config = array () ) {
         foreach( $config as $key => $value ) {
@@ -10,7 +10,7 @@ class Framework {
         }
     }
 
-    public function testFramework ( $var ) {
+    public function testLibrary ( $var ) {
 
     }
 

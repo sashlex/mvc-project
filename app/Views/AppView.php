@@ -21,10 +21,4 @@ class AppView extends \Lib\View {
     /* public function message( $message = '' ) {
        $this->message = $message;
        } */
-
-
-
-
-
-
 }

@@ -21,7 +21,7 @@ require LIB_DIR . DIRECTORY_SEPARATOR . 'View.php'; // REMOVE ??? (by loadClass 
 require LIB_DIR . DIRECTORY_SEPARATOR . 'Controller.php'; // REMOVE ??? (by loadClass loaded)
 # vendor files can be required with composer autoloading or require directly
 require VENDOR_DIR . DIRECTORY_SEPARATOR . 'Orm.php';
-require VENDOR_DIR . DIRECTORY_SEPARATOR . 'Framework.php';
+require VENDOR_DIR . DIRECTORY_SEPARATOR . 'Library.php';
 require VENDOR_DIR . DIRECTORY_SEPARATOR . 'TemplateEngine.php';
 require VENDOR_DIR . DIRECTORY_SEPARATOR . 'Auth.php';
 require VENDOR_DIR . DIRECTORY_SEPARATOR . 'Validate.php';

@@ -13,7 +13,7 @@ $templateEngine = new TemplateEngine( array(
     'cache' => ROOT_DIR . DIRECTORY_SEPARATOR . 'themes/cache',
 ) );
 
-$framework = new Framework( array(
+$library = new Library( array(
     'lib' => rand()
 ) );
 
@@ -33,7 +33,7 @@ return ( object ) array(
         'some' => 'everywhere parameters'
     ),
     'controller' => array( // target -> controller instances
-        'lib' => $framework,
+        'lib' => $library,
         'auth' => $auth
     ),
     'model' => array( // target -> model instances
