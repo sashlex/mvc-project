@@ -1,4 +1,8 @@
-# disallow
+# ignore
 working
-themes/cache
-.projectile
+www/themes/cache/*
+www/.projectile
+docker/database
+
+# allow
+!*.gitkeep

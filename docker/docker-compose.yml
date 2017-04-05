@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+
+  mvc-project:
+    build: ./Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ../www:/var/www/html
+    depends_on:
+      - database
+
+  phpmyadmin:
+    restart: always
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - 8181:80
+    depends_on:
+      - database
+    environment:
+      - MYSQL_USER=mvc_user
+      - MYSQL_PASSWORD=123
+      - MYSQL_ROOT_PASSWORD=321
+      - PMA_HOST=database
+      - PMA_PORT=3306
+
+  database:
+    image: mysql:latest
+    volumes:
+      - ./database:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_USER=mvc_user
+      - MYSQL_PASSWORD=123
+      - MYSQL_ROOT_PASSWORD=321
+      - MYSQL_DATABASE=mvc_base
