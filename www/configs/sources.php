@@ -1,8 +1,8 @@
 <?php
 
 $orm = new Orm( array(
-    'user' => 'root',
-    'password' => '',
+    'user' => 'root_user',
+    'password' => 'password',
     'host' => 'localhost',
     'dbName' => 'mvc',
     'encoding' => 'utf8'

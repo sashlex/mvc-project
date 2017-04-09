@@ -2,7 +2,7 @@
 working
 www/themes/cache/*
 www/.projectile
-docker/database
+docker/database/*
 
 # allow
 !*.gitkeep

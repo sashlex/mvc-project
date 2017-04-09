@@ -1,40 +1,48 @@
 version: '3'
 
+# get phpmyadmin on localhost:8080
+
 services:
 
-  mvc-project:
-    build: ./Dockerfile
+  mvc_project:
+    restart: always
+    container_name: mvc_project
+    build: ./
     ports:
       - 80:80
       - 443:443
     volumes:
       - ../www:/var/www/html
     depends_on:
-      - database
+      - mvc_project_database
 
-  phpmyadmin:
+  mvc_project_phpmyadmin:
     restart: always
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    container_name: mvc_project_phpmyadmin
     ports:
-      - 8181:80
+      - 8080:80
     depends_on:
-      - database
+      - mvc_project_database
     environment:
-      - MYSQL_USER=mvc_user
-      - MYSQL_PASSWORD=123
-      - MYSQL_ROOT_PASSWORD=321
-      - PMA_HOST=database
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=root_user
+      - MYSQL_PASSWORD=password
+      - PMA_HOST=mvc_project_database
       - PMA_PORT=3306
 
-  database:
+  mvc_project_database:
+    restart: always
     image: mysql:latest
+    container_name: mvc_project_database
     volumes:
+      # if used "ntfs" file system, first setup should be executed on file system that support file permissions ("chown" command)
+      # then data can be moved in "ntfs" file system
       - ./database:/var/lib/mysql
     ports:
       - 3306:3306
     environment:
-      - MYSQL_USER=mvc_user
-      - MYSQL_PASSWORD=123
-      - MYSQL_ROOT_PASSWORD=321
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=root_user
+      - MYSQL_PASSWORD=password
       - MYSQL_DATABASE=mvc_base
