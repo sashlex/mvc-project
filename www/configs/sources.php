@@ -9,7 +9,7 @@ $orm = new Orm( array(
 ) );
 
 $templateEngine = new TemplateEngine( array(
-    'theme' => ROOT_DIR . DIRECTORY_SEPARATOR . 'themes/userTheme',
+    'theme' => ROOT_DIR . DIRECTORY_SEPARATOR . 'themes/defaultTheme',
     'cache' => ROOT_DIR . DIRECTORY_SEPARATOR . 'themes/cache',
 ) );
 

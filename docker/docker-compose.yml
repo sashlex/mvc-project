@@ -36,8 +36,9 @@ services:
     image: mysql:latest
     container_name: mvc_project_database
     volumes:
-      # if used "ntfs" file system, first setup should be executed on file system that support file permissions ("chown" command)
-      # then data can be moved in "ntfs" file system
+      # first setup should be executed on file system that support file permissions ("chown" command)
+      # then data can be moved in your file system
+      # where your project was plased
       - ./database:/var/lib/mysql
     ports:
       - 3306:3306
